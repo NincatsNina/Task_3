@@ -41,17 +41,6 @@ public class UserApiClient {
                 .post(API_AUTH_LOGIN);
     }
 
-    @Step("Изменить данные пользователя")
-    public Response updateUser(User updatedData, String token) {
-        RequestSpecification request = given().spec(reqSpec);
-        if (token != null) {
-            request.header("Authorization", token);
-        }
-        return request.body(updatedData)
-                .when()
-                .patch(API_AUTH_USER);
-    }
-
     @Step("Удалить пользователя")
     public void deleteUser(String token) {
         RequestSpecification request = given().spec(reqSpec);

@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ConstructorPage {
-    private final WebDriver driver;
     private final WebDriverWait wait;
 
     // Локаторы элементов страницы
@@ -22,7 +21,6 @@ public class ConstructorPage {
     private final By makeBurgerHeader = By.xpath(".//h1[text()='Соберите бургер']");
 
     public ConstructorPage(WebDriver driver) {
-        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(2));
     }
 
